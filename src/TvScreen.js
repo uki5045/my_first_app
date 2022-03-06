@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
 
 const TvScreen = () => {
@@ -13,9 +13,15 @@ const TvScreen = () => {
 
     }
 
+    // 무조건 실행되는 함수
+    useEffect(() => {
+        getData()
+    }, [])
+
+
     return (
         <div>
-            <button onClick={getData}>데이터 불러오기</button>
+            {/*<button onClick={getData}>데이터 불러오기</button>*/}
             {tvs.map(tv => (
                 <div key={tv.id}>
                     <h1>{tv.original_name}</h1>

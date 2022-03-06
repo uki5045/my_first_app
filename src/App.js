@@ -1,9 +1,9 @@
 import React from 'react';
-import TvScreen from "./TvScreen";
+import MovieScreen from "./MovieScreen";
 
 const App = () => {
     return (
-        <TvScreen />
+        <MovieScreen />
     );
 };
 
