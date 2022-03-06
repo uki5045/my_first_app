@@ -11,24 +11,40 @@
 //
 // export default App;
 
-import React from 'react';
-import {posts} from "./posts";
+import React, {useState} from 'react';
+import axios from "axios";
 
 
 //
 const App = () => {
 
     // 상태, 함수, 변수, 상수
+    const [posts, setPosts] = useState([])
 
-    // 브라우저 화면에서 보여지는 부분
+
+    // 함수
+    const getData = async () => {
+        const { data, status } = await axios.get("https://jsonplaceholder.typicode.com/posts")
+        console.log(data)
+        setPosts(data)
+    }
+
+    // 브라우저 화면에 보여지는 부분
     return (
         <div>
+
+            <button onClick={getData}> 데이터 불러오기 </button>
+
             {posts.map(post => (
                 <div key={post.id}>
                     <h1>{post.title}</h1>
                     <h2>{post.body}</h2>
                 </div>
             ))}
+
+
+
+
         </div>
     );
 };
