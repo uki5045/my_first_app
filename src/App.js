@@ -1,9 +1,9 @@
 import React from 'react';
-import MovieScreen from "./MovieScreen";
+import Comments from "./Comments";
 
 const App = () => {
     return (
-        <MovieScreen />
+        <Comments />
     );
 };
 
