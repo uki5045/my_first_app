@@ -1,9 +1,9 @@
 import React from 'react';
-import Comments from "./Comments";
+import ComScreen from "./ComScreen";
 
 const App = () => {
     return (
-        <Comments />
+        <ComScreen />
     );
 };
 

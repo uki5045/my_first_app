@@ -7,14 +7,14 @@ import { Card, Button, Container, Row, Col } from "react-bootstrap"
 const MovieScreen = () => {
     const [movies, setMovies] = useState([])
 
-    const getDate = async () => {
-        const {data, status } = await axios.get("https://api.themoviedb.org/3/movie/now_playing?api_key=8597e491ed6e80f0de12e349eb60ea6e&language=en-US&page=1")
+    const getData = async () => {
+        const {data } = await axios.get("https://api.themoviedb.org/3/movie/now_playing?api_key=8597e491ed6e80f0de12e349eb60ea6e&language=en-US&page=1")
         console.log(data)
         setMovies(data.results)
     }
 
     useEffect(() => {
-        getDate()
+        getData()
     }, [])
 
 
