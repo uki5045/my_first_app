@@ -1,27 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from "axios";
 
 const ComScreen = () => {
 
     const [ comments, setComments ] = useState([])
 
-    const getData = async() => {
-        const { data } = await axios.get("https://jsonplaceholder.typicode.com/comments")
+    const getData = async () => {
+       const { data } = await axios.get("https://jsonplaceholder.typicode.com/comments")
         setComments(data)
+
     }
 
-
+    useEffect(() => {
+        getData()
+    }, [])
 
     return (
         <div>
             <button onClick={getData}>데이터 불러오기</button>
             {comments.map(comment => (
-                <div>
-                    <h3>{comment.name}</h3>
-                    <h4>{comment.email}</h4>
+                <div key={comment.id}>
+                    <h4>{comment.name}</h4>
                 </div>
             ))}
-       </div>
+        </div>
     );
 };
 
