@@ -1,9 +1,11 @@
 import React from 'react';
-import ComScreen from "./ComScreen";
+import PhotoScreen from "./PhotoScreen";
 
 const App = () => {
     return (
-        <ComScreen />
+        <div>
+            <PhotoScreen />
+        </div>
     );
 };
 
